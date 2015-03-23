@@ -1,0 +1,472 @@
+digraph G {
+    "West of House"[shape=box]
+    "West of House" -> "North of House"[label="N, NE"] //ALL
+    "West of House" -> "South of House"[label="SE, S"]
+    "West of House" -> "Forest Sunlight-Book"[label="W"]
+
+    "North of House"[shape=box]
+    "North of House" -> "Forest Path-Tree"[label="N"] //ALL
+    "North of House" -> "Behind House"[label="E, SE"]
+    "North of House" -> "West of House"[label="SW, W"]
+
+    "Forest Path-Tree"[shape=box]
+    "Forest Path-Tree" -> "Clearing-Grating"[label="N"] //ALL
+    "Forest Path-Tree" -> "Forest-Manual"[label="E"]
+    "Forest Path-Tree" -> "North of House"[label="S"]
+    "Forest Path-Tree" -> "Forest Sunlight-Book"[label="W"]
+    "Forest Path-Tree" -> "Up a Tree"[label="U"]
+
+    "Up a Tree"[shape=box]
+    "Up a Tree" -> "Forest Path-Tree"[label="D"]
+
+    "Clearing-Grating"[shape=box]
+    "Clearing-Grating" -> "Forest-Manual"[label="E"] //ALL
+    "Clearing-Grating" -> "Forest Path-Tree"[label="S"]
+    "Clearing-Grating" -> "Forest Sunlight-Book"[label="W"]
+    "Clearing-Grating" -> "Grating Room"[label="D"]
+
+    "Forest-Manual"[shape=box]
+    "Forest-Manual" -> "Forest-Screwdriver"[label="E"] //ALL
+    "Forest-Manual" -> "Clearing-Bell"[label="S"]
+    "Forest-Manual" -> "Forest Path-Tree"[label="W"]
+
+    "Clearing-Bell"[shape=box]
+    "Clearing-Bell" -> "Forest-Manual"[label="N"] //ALL
+    "Clearing-Bell" -> "Canyon View"[label="E"]
+    "Clearing-Bell" -> "Forest-Guidebook"[label="S"]
+    "Clearing-Bell" -> "Behind House"[label="W"]
+
+    "Canyon View"[shape=box]
+    "Canyon View" -> "Rocky Ledge"[label="E"]//ALL
+    "Canyon View" -> "Forest-Guidebook"[label="W"]
+    "Canyon View" -> "Clearing-Bell"[label="NW"]
+    "Canyon View" -> "Rocky Ledge"[label="D"]
+
+    "Forest-Guidebook"[shape=box]
+    "Forest-Guidebook" -> "Clearing-Bell"[label="N"] //ALL
+    "Forest-Guidebook" -> "Forest Sunlight-Book"[label="W"]
+    "Forest-Guidebook" -> "South of House"[label="NW"]
+
+    "South of House"[shape=box]
+    "South of House" -> "Behind House"[label="NE, E"] //ALL
+    "South of House" -> "Forest-Guidebook"[label="S"]
+    "South of House" -> "West of House"[label="W, NW"]
+
+    "Forest Sunlight-Book"[shape=box]
+    "Forest Sunlight-Book" -> "Clearing-Grating"[label="N"] //ALL W? with machete
+    "Forest Sunlight-Book" -> "Forest Path-Tree"[label="E"]
+    "Forest Sunlight-Book" -> "Forest-Guidebook"[label="S"]
+
+    "Rocky Ledge"[shape=box]
+    "Rocky Ledge" -> "Canyon Bottom"[label="D"]//ALL
+    "Rocky Ledge" -> "Canyon View"[label="U"]
+
+    "Canyon Bottom"[shape=box]
+    "Canyon Bottom" -> "End of Rainbow"[label="N"] //ALL
+    "Canyon Bottom" -> "Rocky Ledge"[label="U"]
+
+    "End of Rainbow"[shape=box]
+    "End of Rainbow" -> "Canyon Bottom"[label="SW"] //ALL
+
+    "Forest-Screwdriver"[shape=box]
+    "Forest-Screwdriver" -> "Forest-Manual"[label="N, S, W"] //ALL
+
+    "Behind House"[shape=box]
+    "Behind House" -> "Clearing-Bell"[label="E"]; //ALL
+    "Behind House" -> "Kitchen"[label="W"];
+    "Behind House" -> "North of House"[label="N, NW"];
+    "Behind House" -> "South of House"[label="S, SW"];
+
+    "Kitchen" -> "Behind House"[label="E"]; //N, NE, SE, S, SW, NW
+    "Kitchen" -> "Living Room"[label="W"];
+    "Kitchen" -> "Attic"[label="U"];
+
+    "Attic"[shape=box];
+    "Attic" -> "Kitchen"[label="D"]; //ALL
+
+    "Living Room" -> "Kitchen"[label="E"]; //N, NE, SE, S, SW, W, NW, U
+    "Living Room" -> "Cellar"[label="D"];
+    "Living Room" -> "Strange Passage"[label="W"];
+
+    "Cellar"[shape=box];
+    "Cellar" -> "Troll Room"[label="N"]; //ALL
+    "Cellar" -> "East of Chasm"[label="S"];
+
+    "East of Chasm"[shape=box];
+    "East of Chasm" -> "Cellar"[label="N"]; //ALL
+    "East of Chasm" -> "Gallery"[label="E"];
+
+    "Gallery"[shape=box]
+    "Gallery" -> "Studio"[label="N"]; //ALL
+    "Gallery" -> "East of Chasm"[label="W"];
+
+    "Studio"[shape=box];
+    "Studio" -> "Gallery"[label="S"];//ALL
+    "Studio" -> "Kitchen"[label="U"];
+
+    "Troll Room"[shape=box];
+    "Troll Room" -> "East-West Passage"[label="E"]; //ALL
+    "Troll Room" -> "Cellar"[label="S"];
+    "Troll Room" -> "Maze-Boat"[label="W"];
+
+    "Maze-Boat"[shape=box]
+    "Maze-Boat" -> "Maze-Boat"[label="N"]; //ALL
+    "Maze-Boat" -> "Troll Room"[label="E"];
+    "Maze-Boat" -> "Maze-Label"[label="S"];
+    "Maze-Boat" -> "Maze-Screwdriver"[label="W"];
+
+    "Maze-Label"[shape=box]
+    "Maze-Label" -> "Maze-Tube"[label="E"]; //ALL
+    "Maze-Label" -> "Maze-Boat"[label="S"];
+    "Maze-Label" -> "Maze-Screwdriver"[label="D"];
+
+    "Maze-Tube"[shape=box]
+    "Maze-Tube" -> "Maze-Screwdriver"[label="N"]; //ALL
+    "Maze-Tube" -> "Maze-Label"[label="W"];
+    "Maze-Tube" -> "Maze-Skeleton"[label="U"];
+
+    "Maze-Skeleton"[shape=box]
+    "Maze-Skeleton" -> "Maze-Tube"[label="N"] //ALL
+    "Maze-Skeleton" -> "Dead End-Pump"[label="E"]
+    "Maze-Skeleton" -> "Maze-Knife"[label="SW"]
+
+    "Maze-Knife"[shape=box]
+    "Maze-Knife" -> "Maze-Burned-Out"[label="E"]
+    "Maze-Knife" -> "Maze-Skeleton"[label="D"]
+    "Maze-Knife" -> "Maze-Guidebook"[label="U"]
+
+    "Maze-Guidebook"[shape=box]
+    "Maze-Guidebook" -> "Maze-Knife"[label="N"] //ALL
+    "Maze-Guidebook" -> "Maze-Book"[label="E"]
+    "Maze-Guidebook" -> "Maze-Bell"[label="S"]
+    "Maze-Guidebook" -> "Maze-Key"[label="W"]
+    "Maze-Guidebook" -> "Maze-Guidebook"[label="NW"]
+    "Maze-Guidebook" -> "Maze-Sandwich"[label="D"]
+
+    "Maze-Sandwich"[shape=box]
+    "Maze-Sandwich" -> "Grating Room"[label="NE"] //ALL
+    "Maze-Sandwich" -> "Maze-Key"[label="SW"]
+    "Maze-Sandwich" -> "Maze-Bell"[label="NW"]
+    "Maze-Sandwich" -> "Maze-Book"[label="D"]
+
+    "Grating Room"[shape=box]
+    "Grating Room" -> "Clearing-Grating"[label="U"]//ALL
+    "Grating Room" -> "Maze-Sandwich"[label="SW"]
+    
+    "Maze-Key"[shape=box]
+    "Maze-Key" -> "Maze-Bell"[label="E"] //ALL
+    "Maze-Key" -> "Dead End-Matchbook"[label="N"]
+    "Maze-Key" -> "Maze-Sandwich"[label="SW"]
+    "Maze-Key" -> "Maze-Skeleton"[label="D"]
+    "Maze-Key" -> "Maze-Guidebook"[label="U"]
+
+    "Dead End-Matchbook"[shape=box]
+    "Dead End-Matchbook" -> "Maze-Key"[label="S"]//ALL
+
+    "Maze-Bell"[shape=box]
+    "Maze-Bell" -> "Maze-Guidebook"[label="E"] //ALL
+    "Maze-Bell" -> "Maze-Book"[label="S"]
+    "Maze-Bell" -> "Maze-Sandwich"[label="W"]
+    "Maze-Bell" -> "Maze-Key"[label="D"]
+
+    "Maze-Book"[shape=box]
+    "Maze-Book" -> "Maze-Guidebook"[label="E"] //ALL
+    "Maze-Book" -> "Maze-Bell"[label="W"]
+    "Maze-Book" -> "Maze-Sandwich"[label="U"]
+
+    "Maze-Burned-Out"[shape=box]
+    "Maze-Burned-Out" -> "Maze-Brass"[label="E"]//ALL
+    "Maze-Burned-Out" -> "Maze-Manual"[label="S"]
+    "Maze-Burned-Out" -> "Maze-Knife"[label="W"]
+    "Maze-Burned-Out" -> "Dead End-Wrench"[label="D"]
+    "Maze-Burned-Out" -> "Maze-Garlic"[label="U"]
+
+    "Maze-Garlic"[shape=box]
+    "Maze-Garlic" -> "Maze-Burned-Out"[label="NE, S"]//ALL
+    "Maze-Garlic" -> "Maze-Manual"[label="W"]
+    "Maze-Garlic" -> "Maze-Garlic"[label="NW"]
+
+    "Maze-Manual"[shape=box]
+    "Maze-Manual" -> "Cyclops Room"[label="SE"]//ALL
+    "Maze-Manual" -> "Maze-Garlic"[label="W"]
+    "Maze-Manual" -> "Maze-Burned-Out"[label="S"]
+
+    "Cyclops Room"[shape=box]
+    "Cyclops Room" -> "Strange Passage"[label="E"] //N, NE, SE, S, SW
+    "Cyclops Room" -> "Maze-Manual"[label="NW"]
+    "Cyclops Room" -> "Treasure Room"[label="U"]
+
+    "Treasure Room"[shape=box]
+    "Treasure Room" -> "Cyclops Room"[label="D"] //ALL
+
+    "Strange Passage" -> "Living Room"[label="E"] //
+    "Strange Passage" -> "Cyclops Room"[label="W"] //
+
+    "Maze-Brass"[shape=box]
+    "Maze-Brass" -> "Maze-Burned-Out"[label="NE"] //ALL
+    "Maze-Brass" -> "Dead End-Sack"[label="SE"]
+    "Maze-Brass" -> "Maze-Brass"[label="W"]
+
+    "Dead End-Sack"[shape=box]
+    "Dead End-Sack" -> "Maze-Brass"[label="N"] //ALL
+
+    "Dead End-Pump"[shape=box]
+    "Dead End-Pump" -> "Maze-Skeleton"[label="W"] //ALL
+
+    "Maze-Screwdriver"[shape=box];
+    "Maze-Screwdriver" -> "Dead End-Wrench"[label="E"]; //ALL
+    "Maze-Screwdriver" -> "Maze-Tube"[label="W"];
+
+    "Dead End-Wrench"[shape=box];
+    "Dead End-Wrench" -> "Maze-Screwdriver"[label="S"]; //ALL
+
+    "East-West Passage"[shape=box];
+    "East-West Passage" -> "Round Room"[label="E"]; //ALL
+    "East-West Passage" -> "Chasm"[label="N"];
+    "East-West Passage" -> "Troll Room"[label="W"];
+    "East-West Passage" -> "Chasm"[label="D"];
+
+    "Round Room"[shape=box];
+    "Round Room" -> "North-South Passage"[label="N"]; //ALL
+    "Round Room" -> "Loud Room"[label="E"];
+    "Round Room" -> "Engravings Cave"[label="SE"];
+    "Round Room" -> "Narrow Passage"[label="S"];
+    "Round Room" -> "East-West Passage"[label="W"];
+
+    "Narrow Passage"[shape=box];
+    "Narrow Passage" -> "Round Room"[label="N"]; //ALL
+    "Narrow Passage" -> "Mirror Room-Manual"[label="S"];
+
+    "Engravings Cave" -> "Dome Room"[label="E"]; //N, NE, SE, S, SW, W
+    "Engravings Cave" -> "Round Room"[label="NW"];
+
+    "Dome Room"[shape=box];
+    "Dome Room" -> "Engravings Cave"[label="W"]; //N, NE, E, SE, S, SW, NW
+    "Dome Room" -> "Torch Room"[label="D"];
+
+    "Torch Room"[shape=box];
+    "Torch Room" -> "Temple"[label="S"]; //ALL
+    "Torch Room" -> "Temple"[label="D"];
+
+    "Temple"[shape=box];
+    "Temple" -> "Torch Room"[label="N,U"]; //ALL
+    "Temple" -> "Egyptian Room"[label="E,D"];
+    "Temple" -> "Altar"[label="S"];
+
+    "Altar" -> "Cave-Guidebook"[label="D"]; //? Is this the right cave
+
+    "Entrance to Hades" -> "Cave-Guidebook"[label="U"];
+
+    "Winding Passage"[shape=box]
+    "Winding Passage" -> "Mirror Room-Manual"[label="N"]; //ALL
+    "Winding Passage" -> "Cave-Guidebook"[label="E"];
+
+    "Mirror Room-Manual"[shape=box]
+    "Mirror Room-Manual" -> "Narrow Passage"[label="N"] //ALL
+    "Mirror Room-Manual" -> "Cave-Guidebook"[label="E"]
+    "Mirror Room-Manual" -> "Winding Passage"[label="W"]
+
+    "Cave-Guidebook"[shape=box]
+    "Cave-Guidebook" -> "Entrance to Hades"[label="D"] //ALL
+    "Cave-Guidebook" -> "Mirror Room-Manual"[label="N"]
+    "Cave-Guidebook" -> "Winding Passage"[label="W"]
+
+    "Cold Passage"[shape=box]
+    "Cold Passage" -> "Slide Room"[label="W"] //ALL
+    "Cold Passage" -> "Mirror Room-Sceptre"[label="S"]
+
+    "Slide Room"[shape=box]
+    "Slide Room" -> "Mine Entrance"[label="N"] //ALL
+    "Slide Room" -> "Cold Passage"[label="E"]
+    "Slide Room" -> "Cellar"[label="D"]
+
+    "Mine Entrance" -> "Slide Room"[label="S"] //N, NE, E, SE, SW
+    "Mine Entrance" -> "Squeaky Room"[label="W"]
+
+    "Squeaky Room" -> "Bat Room"[label="N"]//
+    "Squeaky Room" -> "Mine Entrance"[label="E"]//
+
+    "Ladder Top"[shape=box]
+    "Ladder Top" -> "Coal Mine-Bell"[label="U"] //ALL
+    "Ladder Top" -> "Ladder Bottom"[label="D"]
+
+    "Ladder Bottom"[shape=box]
+    "Ladder Bottom" -> "Dead End-Manual"[label="S"] //ALL
+    "Ladder Bottom" -> "Timber Room"[label="W"]
+    "Ladder Bottom" -> "Ladder Top"[label="U"]
+
+    "Timber Room"[shape=box]
+    "Timber Room" -> "Ladder Bottom"[label="E"]//ALL
+    "Timber Room" -> "Drafty Room"[label="W"]
+    
+    "Drafty Room"[shape=box]
+    "Drafty Room" -> "Timber Room"[label="E"]//ALL
+    "Drafty Room" -> "Machine Room"[label="S"]
+
+    "Machine Room"[shape=box]
+    "Machine Room" -> "Drafty Room"[label="N"] //ALL
+
+    "Dead End-Manual" -> "Ladder Bottom"[label="N"]
+
+    "Coal Mine-Bell"[shape=box]
+    "Coal Mine-Bell" -> "Coal Mine-Tube"[label="N"] //ALL
+    "Coal Mine-Bell" -> "Coal Mine-Bell"[label="W"]
+    "Coal Mine-Bell" -> "Ladder Top"[label="D"]
+
+    "Coal Mine-Tube"[shape=box]
+    "Coal Mine-Tube" -> "Coal Mine-Bottle"[label="E"]//ALL
+    "Coal Mine-Tube" -> "Coal Mine-Tube"[label="S"]
+    "Coal Mine-Tube" -> "Coal Mine-Bell"[label="SW"]
+
+    "Coal Mine-Bottle"[shape=box]
+    "Coal Mine-Bottle" -> "Coal Mine-Bottle"[label="N"] //ALL
+    "Coal Mine-Bottle" -> "Coal Mine-Tube"[label="SE"]
+    "Coal Mine-Bottle" -> "Coal Mine-Sandwich"[label="S"]
+
+    "Coal Mine-Sandwich"[shape=box]
+    "Coal Mine-Sandwich" -> "Gas Room"[label="N"] //SE, S, SW, W, NW
+    "Coal Mine-Sandwich" -> "Coal Mine-Bottle"[label="NE"]
+    "Coal Mine-Sandwich" -> "Coal Mine-Sandwich"[label="E"]
+
+    "Gas Room"[shape=box]
+    "Gas Room" -> "Coal Mine-Sandwich"[label="E"]//ALL
+    "Gas Room" -> "Smelly Room"[label="U"]
+
+    "Smelly Room"[shape=box]
+    "Smelly Room" -> "Shaft Room"[label="S"]//ALL
+    "Smelly Room" -> "Gas Room"[label="D"]
+
+    "Shaft Room" -> "Smelly Room"[label="N"] //NE, E, SE, S, SW
+    "Smelly Room" -> "Bat Room"[label="W"]
+
+    "Egyptian Room"[shape=box]
+    "Egyptian Room" -> "Temple"[label="W,U"]; //ALL
+
+    "North-South Passage"[shape=box];
+    "North-South Passage" -> "Chasm"[label="N"]; //ALL
+    "North-South Passage" -> "Deep Canyon"[label="NE"];
+    "North-South Passage" -> "Round Room"[label="S"];
+
+    "Chasm"[shape=box]
+    "Chasm" -> "Reservoir South"[label="NE"]; //ALL
+    "Chasm" -> "North-South Passage"[label="S"];
+    "Chasm" -> "East-West Passage"[label="U,SW"];
+
+    //"Reservoir South"[shape=box]
+    "Reservoir South" -> "Reservoir"[label="N"];
+    "Reservoir South" -> "Dam"[label="E"]; //
+    "Reservoir South" -> "Deep Canyon"[label="SE"];
+    "Reservoir South" -> "Chasm"[label="SW"];
+    "Reservoir South" -> "Stream View"[label="W"];
+
+    "Reservoir" -> "Reservoir North"[label="N"]; //NE, E, SE, SW, W-need a vehicle
+    "Reservoir" -> "Reservoir South"[label="S"];
+
+    "Reservoir North"[shape=box]
+    "Reservoir North" -> "Atlantis Room"[label="N"] //ALL
+    "Reservoir North" -> "Reservoir"[label="S"]
+
+    "Atlantis Room"[shape=box]
+    "Atlantis Room" -> "Reservoir North" [label="S"]
+    "Atlantis Room" -> "Cave-Matches"[label="U"]
+
+    "Cave-Matches"[shape=box]
+    "Cave-Matches" -> "Mirror Room-Sceptre"[label="N"] //ALL
+    "Cave-Matches" -> "Atlantis Room"[label="S, D"]
+    "Cave-Matches" -> "Twisting Passage"[label="W"]
+
+    "Twisting Passage"[shape=box]
+    "Twisting Passage" -> "Mirror Room-Sceptre"[label="N"] //ALL
+    "Twisting Passage" -> "Cave-Matches"[label="E"]
+
+    "Mirror Room-Sceptre"[shape=box]
+    "Mirror Room-Sceptre" -> "Cold Passage"[label="N"] //ALL
+    "Mirror Room-Sceptre" -> "Cave-Matches"[label="E"]
+    "Mirror Room-Sceptre" -> "Twisting Passage"[label="W"]
+
+    "Stream View"[shape=box]
+    "Stream View" -> "Reservoir South"[label="E"]; //ALL
+
+    "Dam"[shape=box]
+    "Dam" -> "Dam Lobby"[label="N"]; //ALL
+    "Dam" -> "Dam Base"[label="E,D"];
+    "Dam" -> "Deep Canyon"[label="S"];
+    "Dam" -> "Reservoir South"[label="W"];
+    
+    "Deep Canyon"[shape=box];
+    "Deep Canyon" -> "Dam"[label="E"]; //ALL
+    "Deep Canyon" -> "North-South Passage"[label="SW"];
+    "Deep Canyon" -> "Reservoir South"[label="NW"];
+    "Deep Canyon" -> "Loud Room"[label="D"];
+
+    "Loud Room"[shape=box]
+    "Loud Room" -> "Deep Canyon"[label="U"]; //ALL
+    "Loud Room" -> "Round Room"[label="W"];
+    "Loud Room" -> "Damp Cave"[label="E"];
+
+    "Damp Cave"[shape=box]
+    "Damp Cave" -> "White Cliffs Beach"[label="E"];//ALL
+    "Damp Cave" -> "Loud Room"[label="W"];
+
+    "White Cliffs Beach"[shape=box]
+    "White Cliffs Beach" -> "Rocky Beach"[label="S"];//ALL
+    "White Cliffs Beach" -> "Damp Cave"[label="W"];
+
+    "Rocky Beach"[shape=box]
+    "Rocky Beach" -> "White Cliffs Beach"[label="N"]; //ALL
+
+    "Dam Base"[shape=box]
+    "Dam Base" -> "Dam"[label="N,U"]; //ALL
+    "Dam Base" -> "Frigid River, Dam"[label="Launch"];
+
+    "Frigid River, Dam" -> "Frigid River, Corner"[label="N"];
+
+    "Frigid River, Corner" -> "Frigid River, Valley"[label="S"];//E, W
+
+    "Frigid River, Valley" -> "White Cliffs Beach"[label="W"];
+
+    "Frigid River, Valley" -> "Sandy Beach River"[label="S"];
+
+    "Frigid River, Valley" -> "Sandy Beach"[label="E"]; 
+
+    "Sandy Beach" -> "Sandy Cave"[label="NE"];//N, E, SE
+    "Sandy Beach" -> "Rocky Beach"[label="W"];
+    "Sandy Beach" -> "Shore"[label="S"];
+
+    "Shore"[shape=box]
+    "Shore" -> "Sandy Beach"[label="N"]; //ALL
+    "Shore" -> "Aragain Falls"[label="S"];
+    
+    "Aragain Falls"[shape=box]
+    "Aragain Falls" -> "Shore"[label="N"]; //ALL
+
+    "Sandy Cave"[shape=box]
+    "Sandy Cave" -> "Sandy Beach"[label="SW"];//ALL
+
+    "Dam Lobby"[shape=box]
+    "Dam Lobby" -> "Maintenance Room"[label="N"]; //ALL
+    "Dam Lobby" -> "Maintenance Room"[label="E"];
+    "Dam Lobby" -> "Dam"[label="S"];
+
+    "Maintenance Room"[shape=box]
+    "Maintenance Room" -> "Dam Lobby"[label="W,S"]; //ALL
+}
+
+/*
+Quests:
+Mine
+Loud Room
+Boat (take to forest locations)
+Mirror Room
+Granite Wall
+Sandy Beach + Buoy
+Screwdriver
+Bell?
+Damp Cave
+Blow up self in gas room?
+
+Notes: BROWN button then YELLOW button? -> Serene green glow from plastic bubble in dam
+Serene glow -> bolt can be turned with wrench -> toggle state of sluice gates on dam
+
+Silver Chalice -- Treasure Room
+*/
