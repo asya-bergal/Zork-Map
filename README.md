@@ -1,4 +1,4 @@
-Dependies: GraphViz
+Dependencies: GraphViz
 
 The easiest way to add to the map in realtime is to set up a script that listens for modifications to map.dot, then automatically regenerates the image. To do so in Bash:
 
