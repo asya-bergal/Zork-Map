@@ -91,6 +91,7 @@ digraph G {
     "Cellar"[shape=box];
     "Cellar" -> "Troll Room"[label="N"]; //ALL
     "Cellar" -> "East of Chasm"[label="S"];
+    "Cellar" -> "Living Room"[label="U"];
 
     "East of Chasm"[shape=box];
     "East of Chasm" -> "Cellar"[label="N"]; //ALL
@@ -286,6 +287,10 @@ digraph G {
     "Squeaky Room" -> "Bat Room"[label="N"]//
     "Squeaky Room" -> "Mine Entrance"[label="E"]//
 
+    "Bat Room"[shape=box]
+    "Bat Room" -> "Shaft Room"[label="E"]//ALL
+    "Bat Room" -> "Squeaky Room"[label="S"]
+
     "Ladder Top"[shape=box]
     "Ladder Top" -> "Coal Mine-Bell"[label="U"] //ALL
     "Ladder Top" -> "Ladder Bottom"[label="D"]
@@ -337,6 +342,7 @@ digraph G {
     "Smelly Room" -> "Gas Room"[label="D"]
 
     "Shaft Room" -> "Smelly Room"[label="N"] //NE, E, SE, S, SW
+    "Shaft Room" -> "Bat Room"[label="W"] //NE, E, SE, S, SW
     "Smelly Room" -> "Bat Room"[label="W"]
 
     "Egyptian Room"[shape=box]
@@ -419,9 +425,9 @@ digraph G {
     "Dam Base" -> "Dam"[label="N,U"]; //ALL
     "Dam Base" -> "Frigid River, Dam"[label="Launch"];
 
-    "Frigid River, Dam" -> "Frigid River, Corner"[label="N"];
+    "Frigid River, Dam" -> "Frigid River, Corner"[label="S"]; //E,
 
-    "Frigid River, Corner" -> "Frigid River, Valley"[label="S"];//E, W
+    "Frigid River, Corner" -> "Frigid River, Valley"[label="S, W"];W
 
     "Frigid River, Valley" -> "White Cliffs Beach"[label="W"];
 
@@ -454,19 +460,16 @@ digraph G {
 
 /*
 Quests:
-Mine
-Loud Room
-Boat (take to forest locations)
+Mine?
 Mirror Room
 Granite Wall
 Sandy Beach + Buoy
-Screwdriver
 Bell?
 Damp Cave
 Blow up self in gas room?
+Shovel end of rainbow
+Hello sailor
 
 Notes: BROWN button then YELLOW button? -> Serene green glow from plastic bubble in dam
 Serene glow -> bolt can be turned with wrench -> toggle state of sluice gates on dam
-
-Silver Chalice -- Treasure Room
 */
